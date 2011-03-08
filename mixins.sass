@@ -1,0 +1,29 @@
+@mixin rounded-div($radius: 6px, $padding: 10px, $margin: 10px, $color: #000)
+{
+  border: 1px solid $color;
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  padding: $padding;
+  margin-bottom: $margin;
+}
+
+@mixin rounded-corner($radius: 6px)
+{
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
+
+@mixin box-shadow($radius: 8px, $color: #cccccc, $border: false, $offset: 0px, $inset: false)
+{
+  @if $border { border: 1px solid $color; }
+  @if $inset { $inset_word = 'inset' } @else { $inset_word = '' }
+  
+  box-shadow: $inset_word $offset $offset $radius $color;
+  -webkit-box-shadow: $inset_word $offset $offset $radius $color;
+  -moz-box-shadow: $inset_word $offset $offset $radius $color;
+}
+
